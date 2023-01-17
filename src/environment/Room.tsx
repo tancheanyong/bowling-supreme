@@ -5,7 +5,7 @@ const Room = () => {
     <group>
       <mesh rotation={[Math.PI * 0.5, 0, 0]}>
         <planeBufferGeometry args={[5, 20]} />
-        <meshStandardMaterial color={"black"} side={DoubleSide} />
+        <meshStandardMaterial color={"brown"} side={DoubleSide} />
       </mesh>
     </group>
   );
