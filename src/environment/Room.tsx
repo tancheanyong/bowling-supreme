@@ -1,10 +1,10 @@
-import { usePlane } from "@react-three/cannon";
+import { useBox, usePlane } from "@react-three/cannon";
 import { useRef } from "react";
 import { DoubleSide, Group, Mesh } from "three";
 
 const Room = () => {
-  const [floorRef] = usePlane(
-    () => ({ rotation: [-Math.PI * 0.5, 0, 0] }),
+  const [floorRef] = useBox(
+    () => ({ rotation: [-Math.PI * 0.5, 0, 0], args: [5, 20, 0.01] }),
     useRef<Mesh>(null!)
   );
 

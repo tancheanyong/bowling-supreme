@@ -8,7 +8,13 @@ type BallProps = {
 
 const Ball: FC<BallProps> = ({ position = [0, 0, 0] }) => {
   const [ballRef, api] = useSphere(
-    () => ({ position, mass: 8, args: [0.5] }),
+    () => ({
+      position,
+      mass: 8,
+      args: [0.5],
+      linearDamping: 0.31,
+      angularDamping: 0.1,
+    }),
     useRef<Mesh>(null!)
   );
 
