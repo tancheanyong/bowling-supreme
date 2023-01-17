@@ -1,13 +1,19 @@
-import React, { FC } from "react";
+import { useSphere } from "@react-three/cannon";
+import React, { FC, useRef } from "react";
+import { Mesh } from "three";
 
 type BallProps = {
   position?: [number, number, number];
 };
 
 const Ball: FC<BallProps> = ({ position = [0, 0, 0] }) => {
+  const [ballRef] = useSphere(
+    () => ({ position, mass: 8, args: [0.5] }),
+    useRef<Mesh>(null!)
+  );
   return (
-    <mesh position={position}>
-      <sphereBufferGeometry args={[0.5, 20, 30, 30]} />
+    <mesh ref={ballRef}>
+      <sphereBufferGeometry args={[0.5]} />
       <meshStandardMaterial color={"black"} />
     </mesh>
   );
