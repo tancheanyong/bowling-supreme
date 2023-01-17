@@ -1,3 +1,4 @@
+import { Physics } from "@react-three/cannon";
 import { OrbitControls } from "@react-three/drei";
 import { Suspense } from "react";
 import Ball from "./entities/Ball";
@@ -10,8 +11,10 @@ const Scene = () => {
       <axesHelper />
       <OrbitControls />
       <ambientLight intensity={1} />
-      <Room />
-      <Ball />
+      <Physics>
+        <Room />
+        <Ball position={[0, 1, 4]} />
+      </Physics>
     </Suspense>
   );
 };
