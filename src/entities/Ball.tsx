@@ -7,12 +7,17 @@ type BallProps = {
 };
 
 const Ball: FC<BallProps> = ({ position = [0, 0, 0] }) => {
-  const [ballRef] = useSphere(
+  const [ballRef, api] = useSphere(
     () => ({ position, mass: 8, args: [0.5] }),
     useRef<Mesh>(null!)
   );
+
+  const onBallClick = () => {
+    api.applyImpulse([0, 0, -50], [0, 0, 0]);
+  };
+
   return (
-    <mesh ref={ballRef}>
+    <mesh ref={ballRef} onClick={onBallClick}>
       <sphereBufferGeometry args={[0.5]} />
       <meshStandardMaterial color={"black"} />
     </mesh>
