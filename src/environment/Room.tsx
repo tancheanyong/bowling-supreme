@@ -1,19 +1,24 @@
-import { useBox, usePlane } from "@react-three/cannon";
-import { useRef } from "react";
-import { DoubleSide, Group, Mesh } from "three";
+import React, { Suspense, useState } from "react";
+import SolidPlane from "./SolidPlane";
+
+type wallParams = {
+  size: [number, number];
+  segments?: [number, number];
+  rotation?: [number, number, number];
+};
+
+const WALLS: wallParams[] = [
+  { size: [5, 20], rotation: [-Math.PI * 0.5, 0, 0] },
+];
 
 const Room = () => {
-  const [floorRef] = useBox(
-    () => ({ rotation: [-Math.PI * 0.5, 0, 0], args: [5, 20, 0.01] }),
-    useRef<Mesh>(null!)
-  );
-
+  const [walls, setWalls] = useState(WALLS);
   return (
     <group>
-      <mesh ref={floorRef}>
-        <planeBufferGeometry args={[5, 20]} />
-        <meshStandardMaterial color={"brown"} side={DoubleSide} />
-      </mesh>
+      {walls.length > 0 &&
+        walls.map(({ rotation, size }) => (
+          <SolidPlane rotation={rotation} size={size} />
+        ))}
     </group>
   );
 };
