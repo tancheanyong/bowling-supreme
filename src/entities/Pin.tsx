@@ -21,22 +21,29 @@ export type PinProps = {
 };
 
 const Pin: FC<PinProps> = ({ size, ...props }) => {
-  const { nodes, materials } = useGLTF("/assets/bowling_pin/scene.gltf");
+  const { nodes, materials } = useGLTF("/assets/bowling_pin/edited-pin.gltf");
   const [pinRef] = useBox(
-    () => ({ args: [...size], ...props }),
+    () => ({ args: [size[0], size[1] * 2, size[2]], ...props }),
     useRef<Group>(null!)
   );
+
+  console.log({ nodes, materials });
   return (
-    <group {...props} dispose={null} ref={pinRef}>
+    <group dispose={null} ref={pinRef}>
       <mesh
-        scale={[3, 3, 3]}
+        scale={[7 * size[0], 7 * size[1], 7 * size[2]]}
         geometry={(nodes as any).Object_4.geometry}
         material={materials.material}
+      />
+      <mesh
+        scale={[7 * size[0], 7 * size[1], 7 * size[2]]}
+        geometry={(nodes as any).Object_5.geometry}
+        material={materials.PinStripe}
       />
     </group>
   );
 };
 
-useGLTF.preload("/scene.gltf");
+useGLTF.preload("/assets/bowling_pin/edited-pin.gltf");
 
 export default Pin;
