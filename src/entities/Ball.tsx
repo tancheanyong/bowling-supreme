@@ -20,7 +20,7 @@ const Ball: FC<BallProps> = ({ position = [0, 0, 0] }) => {
 
   const onBallClick = () => {
     // api.applyImpulse([0, 0, -50], [0, 0, 0]);
-    api.applyImpulse([50, 0, 0], [0, 0, 0]);
+    api.applyImpulse([0, 0, -500], [0, 0, 0]);
   };
 
   return (

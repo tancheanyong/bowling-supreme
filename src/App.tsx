@@ -8,13 +8,11 @@ function App() {
       <Canvas
         shadows
         className="canvas"
-        camera={
-          {
-            // fov: 70,
-            // position: [0, 25, 50],
-            // rotation: [0.1, 0, 0],
-          }
-        }
+        camera={{
+          fov: 70,
+          position: [0, 2, 13],
+          // rotation: [0.1, 0, 0],
+        }}
       >
         <Scene />
       </Canvas>
