@@ -11,15 +11,17 @@ const Scene = () => {
       <axesHelper />
       {/* <OrbitControls /> */}
       <ambientLight intensity={0.3} />
-      <directionalLight intensity={1} position={[-1, 5, 0]} />
+      <directionalLight intensity={1} position={[-1, 5, -10]} />
       <Physics>
-        <Debug scale={1.001} color={"white"}>
-          <Room />
-          <Ball position={[0, 1, 7]} />
-          <Pin position={[0, 1, -4]} size={[0.5, 1, 0.5]} mass={1} />
-          <Pin position={[-0.5, 1, -4]} size={[0.5, 1, 0.5]} mass={1} />
-          <Pin position={[0.5, 1, -4]} size={[0.5, 1, 0.5]} mass={1} />
-        </Debug>
+        {/* <Debug scale={1.001} color={"white"}> */}
+        <Room />
+        <Ball position={[0, 1, 7]} />
+        <Pin position={[0, 1, -4]} size={[0.5, 1, 0.5]} mass={1} />
+        <Pin position={[-0.5, 1, -4]} size={[0.5, 1, 0.5]} mass={1} />
+        <Pin position={[0.5, 1, -4]} size={[0.5, 1, 0.5]} mass={1} />
+        <Pin position={[0.25, 2, -4]} size={[0.5, 1, 0.5]} mass={1} />
+        <Pin position={[-0.25, 2, -4]} size={[0.5, 1, 0.5]} mass={1} />
+        {/* </Debug> */}
       </Physics>
     </Suspense>
   );
