@@ -17,12 +17,7 @@ const Scene = () => {
         {/* <Debug scale={1.001} color={"white"}> */}
         <Room />
         <Ball position={[0, 1, 7]} />
-        <Pin size={[1, 1, 1]} position={[0, 2, 0]} />
-        {/* <BoxPin position={[0, 1, -4]} size={[0.5, 1, 0.5]} mass={1} />
-        <BoxPin position={[-0.5, 1, -4]} size={[0.5, 1, 0.5]} mass={1} />
-        <BoxPin position={[0.5, 1, -4]} size={[0.5, 1, 0.5]} mass={1} />
-        <BoxPin position={[0.25, 2, -4]} size={[0.5, 1, 0.5]} mass={1} />
-        <BoxPin position={[-0.25, 2, -4]} size={[0.5, 1, 0.5]} mass={1} /> */}
+        <Pin size={[1, 1, 1]} position={[0, 2, 0]} mass={1} />
         {/* </Debug> */}
       </Physics>
     </Suspense>

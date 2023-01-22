@@ -7,22 +7,35 @@ Source: https://sketchfab.com/3d-models/bowling-pin-028ccb945012460aa9056ffda5b5
 Title: Bowling Pin
 */
 
-import React, { useRef } from "react";
+import React, { FC, useRef } from "react";
 import { useGLTF } from "@react-three/drei";
+import { useBox } from "@react-three/cannon";
+import { Mesh, Group } from "three";
 
-function Pin(props) {
+export type PinProps = {
+  size: [number, number, number];
+  segments?: [number, number];
+  rotation?: [number, number, number];
+  position?: [number, number, number];
+  mass?: number;
+};
+
+const Pin: FC<PinProps> = ({ size, ...props }) => {
   const { nodes, materials } = useGLTF("/assets/bowling_pin/scene.gltf");
+  const [pinRef] = useBox(
+    () => ({ args: [...size], ...props }),
+    useRef<Group>(null!)
+  );
   return (
-    <group {...props} dispose={null}>
+    <group {...props} dispose={null} ref={pinRef}>
       <mesh
         scale={[3, 3, 3]}
-        geometry={nodes.Object_4.geometry}
+        geometry={(nodes as any).Object_4.geometry}
         material={materials.material}
-        rotation={[0, 0, 0]}
       />
     </group>
   );
-}
+};
 
 useGLTF.preload("/scene.gltf");
 
