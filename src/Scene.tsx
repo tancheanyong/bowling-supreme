@@ -51,8 +51,9 @@ const Scene = () => {
       <Environment files={"/kiara_interior_1k.hdr"} background />
       <axesHelper />
       <OrbitControls />
-      <ambientLight intensity={0.2} />
+      <ambientLight intensity={0.2} color={"#ffd09e"} />
       <directionalLight
+        color={"#fadbaa"}
         ref={lightRef}
         intensity={0.5}
         position={[3, 1, -2]}
