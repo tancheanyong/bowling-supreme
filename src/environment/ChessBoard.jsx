@@ -14,7 +14,7 @@ export function ChessBoard(props) {
   const { nodes, materials } = useGLTF("/assets/chess/scene.gltf");
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]} scale={0.05}>
+      <group rotation={[-Math.PI / 2, 0, Math.PI / 2]} scale={0.05}>
         <group rotation={[Math.PI / 2, 0, 0]}>
           <mesh
             geometry={nodes.Object_4.geometry}

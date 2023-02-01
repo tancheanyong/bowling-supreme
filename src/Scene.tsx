@@ -1,5 +1,5 @@
 import { Debug, Physics } from "@react-three/cannon";
-import { OrbitControls } from "@react-three/drei";
+import { Environment, OrbitControls } from "@react-three/drei";
 import { Suspense } from "react";
 import Ball from "./entities/Ball";
 import Pin, { PinProps } from "./entities/Pin";
@@ -29,10 +29,11 @@ const PINS: PinProps[] = [
 const Scene = () => {
   return (
     <Suspense fallback={null}>
+      <Environment files={"/kiara_interior_1k.hdr"} background />
       <axesHelper />
       <OrbitControls />
-      <ambientLight intensity={0.3} />
-      <directionalLight intensity={1} position={[-1, 5, -10]} />
+      <ambientLight intensity={0.5} />
+      <directionalLight intensity={0.5} position={[5, 5, -10]} />
       <Physics>
         <Debug scale={1.001} color={"white"}>
           <ChessBoard />
