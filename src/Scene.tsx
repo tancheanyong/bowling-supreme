@@ -7,6 +7,7 @@ import BoxPin from "./entities/BoxPin";
 import Room from "./environment/Room";
 import { ChessBoard } from "./environment/ChessBoard";
 import SolidPlane from "./environment/SolidPlane";
+import { TextureTypes } from "./types/textures";
 
 const PINS: PinProps[] = [
   {
@@ -26,6 +27,14 @@ const PINS: PinProps[] = [
   },
 ];
 
+const TABLE_TEXTURES: TextureTypes = {
+  map: "/assets/table/textures/wood_table_worn_diff_2k.jpg",
+  aoMap: "/assets/table/textures/wood_table_worn_ao_2k.jpg",
+  roughnessMap: "/assets/table/textures/wood_table_worn_rough_2k.jpg",
+  normalMap: "/assets/table/textures/wood_table_worn_nor_gl_2k.jpg",
+  displacementMap: "/assets/table/textures/wood_table_worn_disp_2k.jpg",
+};
+
 const Scene = () => {
   return (
     <Suspense fallback={null}>
@@ -37,10 +46,7 @@ const Scene = () => {
       <Physics>
         <Debug scale={1.001} color={"white"}>
           <ChessBoard />
-          <SolidPlane
-            texture="/assets/table/textures/wood_table_worn_diff_1k.jpg"
-            size={[2, 2]}
-          />
+          <SolidPlane textures={TABLE_TEXTURES} geometry={{ args: [2, 2] }} />
           {/* <Room />
           <Ball position={[0, 1, 7]} />
           {PINS.map((pin) => (
