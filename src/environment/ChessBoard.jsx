@@ -17,11 +17,15 @@ export function ChessBoard(props) {
       <group rotation={[-Math.PI / 2, 0, Math.PI / 2]} scale={0.05}>
         <group rotation={[Math.PI / 2, 0, 0]}>
           <mesh
+            receiveShadow
+            castShadow
             geometry={nodes.Object_4.geometry}
             material={materials.Board}
             position={[0, 0, 0]}
           />
           <mesh
+            receiveShadow
+            castShadow
             geometry={nodes.Object_20.geometry}
             material={materials.Board}
             position={[0, 0, 0]}

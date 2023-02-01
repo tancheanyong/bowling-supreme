@@ -33,9 +33,10 @@ const SolidPlane: FC<SolidPlaneProps> = ({ textures, geometry }) => {
     useTextureWrapper(textures);
 
   return (
-    <mesh ref={floorRef}>
+    <mesh ref={floorRef} receiveShadow>
       <planeBufferGeometry args={[args[0], args[1]]} />
       <meshStandardMaterial
+        shadowSide={DoubleSide}
         side={DoubleSide}
         map={map}
         aoMap={aoMap}
