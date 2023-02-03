@@ -15,6 +15,7 @@ import {
   DirectionalLight,
   DirectionalLightHelper,
 } from "three";
+import ChessPieceManager from "./entities/ChessPieceManager";
 
 const PINS: PinProps[] = [
   {
@@ -69,6 +70,7 @@ const Scene = () => {
             <sphereBufferGeometry args={[0.2, 16, 16]} />
             <meshStandardMaterial color={"white"} />
           </mesh> */}
+          <ChessPieceManager />
           <ChessBoard />
           <SolidPlane
             textures={TABLE_TEXTURES}
