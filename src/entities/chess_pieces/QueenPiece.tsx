@@ -21,10 +21,12 @@ export const QueenPiece: FC<ChessPieceProps> = ({
       {color === ChessPieceColors.BLACK ? (
         <group position={position}>
           <mesh
+            castShadow
             geometry={(nodes as any).Object_10.geometry}
             material={materials.Black_Piece}
           />
           <mesh
+            castShadow
             geometry={(nodes as any).Object_11.geometry}
             material={materials.White_Piece}
           />
@@ -32,10 +34,12 @@ export const QueenPiece: FC<ChessPieceProps> = ({
       ) : (
         <group position={position}>
           <mesh
+            castShadow
             geometry={(nodes as any).Object_22.geometry}
             material={materials.White_Piece}
           />
           <mesh
+            castShadow
             geometry={(nodes as any).Object_23.geometry}
             material={materials.Black_Piece}
           />

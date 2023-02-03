@@ -52,12 +52,12 @@ const Scene = () => {
       <Environment files={"/kiara_interior_1k.hdr"} background />
       <axesHelper />
       <OrbitControls />
-      <ambientLight intensity={0.2} color={"#ffd09e"} />
+      <ambientLight intensity={0.1} color={"#ffd09e"} />
       <directionalLight
         color={"#fadbaa"}
         ref={lightRef}
-        intensity={0.5}
-        position={[3, 1, -2]}
+        intensity={0.7}
+        position={[3, 1.5, -2]}
         castShadow
         shadow-camera-left={-0.5}
         shadow-camera-bottom={-0.5}
