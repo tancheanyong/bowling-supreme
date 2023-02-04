@@ -1,3 +1,7 @@
+### Setup
+
+Run `yarn` or `npm install` depending on your package manager.
+
 ### To run
 
 Execute `yarn start` or `npm start`
