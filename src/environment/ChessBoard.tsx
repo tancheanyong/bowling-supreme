@@ -11,22 +11,24 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { useBox } from "@react-three/cannon";
 import { DoubleSide, Group, Mesh } from "three";
+import { CHESS_ASSET_SCALE } from "../types/textures";
 
 export function ChessBoard() {
   const { nodes, materials } = useGLTF("/assets/chess/scene.gltf");
 
   const [chessBoardRef] = useBox(
     () => ({
-      args: [3, 0.195, 3],
+      args: [3, 0.2, 3],
       rotation: [0, -Math.PI / 2, 0],
       position: [0, 0.1, 0],
+      mass: 0.5,
       allowSleep: true,
     }),
     useRef<Group>(null!)
   );
 
   return (
-    <group dispose={null} ref={chessBoardRef} scale={0.33}>
+    <group dispose={null} ref={chessBoardRef} scale={CHESS_ASSET_SCALE}>
       <mesh
         receiveShadow
         castShadow

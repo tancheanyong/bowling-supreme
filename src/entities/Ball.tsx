@@ -10,8 +10,8 @@ const Ball: FC<BallProps> = ({ position = [0, 0, 0] }) => {
   const [ballRef, api] = useSphere(
     () => ({
       position,
-      mass: 8,
-      args: [0.5],
+      mass: 0.5,
+      args: [0.3],
       linearDamping: 0.31,
       angularDamping: 0.1,
     }),
@@ -20,12 +20,12 @@ const Ball: FC<BallProps> = ({ position = [0, 0, 0] }) => {
 
   const onBallClick = () => {
     // api.applyImpulse([0, 0, -50], [0, 0, 0]);
-    api.applyImpulse([0, 0, -500], [0, 0, 0]);
+    api.applyImpulse([0, 2, -10], [0, 0, 0]);
   };
 
   return (
     <mesh ref={ballRef} onClick={onBallClick}>
-      <sphereBufferGeometry args={[0.5]} />
+      <sphereBufferGeometry args={[0.3]} />
       <meshStandardMaterial color={"black"} />
     </mesh>
   );

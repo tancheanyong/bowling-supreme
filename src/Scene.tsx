@@ -73,7 +73,7 @@ const Scene = () => {
             textures={TABLE_TEXTURES}
             geometry={{ args: [10, 10], position: [0, -0.0, 0] }}
           />
-          {/* <Ball position={[0, 1, 7]} /> */}
+          <Ball position={[0, 1, 3]} />
           {/* <Room />
           {PINS.map((pin) => (
             <Pin size={pin.size} position={pin.position} mass={pin.mass} />
