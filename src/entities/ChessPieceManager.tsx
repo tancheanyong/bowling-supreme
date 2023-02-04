@@ -20,21 +20,26 @@ type ChessPieceTypes = {
 
 export type ChessPieceProps = Omit<ChessPieceTypes, "name">;
 
+const getRandomPosition = (): [number, number, number] => {
+  const randomRange = (Math.random() - 0.5) * 3;
+  return [randomRange, 0.5, randomRange];
+};
+
 const CHESS_PIECES: ChessPieceTypes[] = [
   {
     name: ChessPieceNames.QUEEN,
     color: ChessPieceColors.BLACK,
-    position: [0.2, 1, 0.2],
+    position: getRandomPosition(),
   },
   {
     name: ChessPieceNames.QUEEN,
     color: ChessPieceColors.WHITE,
-    position: [0.4, 1, 0.4],
+    position: getRandomPosition(),
   },
   {
     name: ChessPieceNames.PAWN,
     color: ChessPieceColors.WHITE,
-    position: [-0.1, 1, -0.1],
+    position: getRandomPosition(),
   },
 ];
 
