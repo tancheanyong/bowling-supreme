@@ -13,6 +13,7 @@ import { ChessPieceColors, ChessPieceProps } from "../ChessPieceManager";
 import { useBox, useCylinder } from "@react-three/cannon";
 import { DoubleSide, Group, Mesh } from "three";
 import { useFrame } from "@react-three/fiber";
+import { CHESS_ASSET_SCALE } from "../../types/textures";
 
 export const QueenPiece: FC<ChessPieceProps> = ({
   color,
@@ -34,7 +35,7 @@ export const QueenPiece: FC<ChessPieceProps> = ({
   );
 
   return (
-    <group dispose={null} scale={0.33} ref={ref}>
+    <group dispose={null} scale={CHESS_ASSET_SCALE} ref={ref}>
       {color === ChessPieceColors.BLACK ? (
         <group>
           <mesh

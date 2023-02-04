@@ -17,3 +17,5 @@ export type ProcessedTextureTypes = {
   displacementMap?: Texture;
   armMap?: Texture;
 };
+
+export const CHESS_ASSET_SCALE = 0.33;
