@@ -10,35 +10,56 @@ Title: Chess - Day 4 - 3December
 import React, { useRef, FC } from "react";
 import { useGLTF } from "@react-three/drei";
 import { ChessPieceColors, ChessPieceProps } from "../ChessPieceManager";
+import { useBox, useCylinder } from "@react-three/cannon";
+import { DoubleSide, Group, Mesh } from "three";
+import { useFrame } from "@react-three/fiber";
 
 export const QueenPiece: FC<ChessPieceProps> = ({
   color,
-  position = [0, 0.5, 0],
+  position = [0, 0.1, 0],
 }) => {
   const { nodes, materials } = useGLTF("/assets/chess/scene.gltf");
+
+  const [ref] = useCylinder(
+    () => ({
+      args: [0.01, 0.018, 0.075],
+      rotation: [0, 0, 0],
+      position,
+      mass: 0.1,
+      allowSleep: true,
+      sleepSpeedLimit: 0.2,
+      sleepTimeLimit: 0.01,
+    }),
+    useRef<Group>(null!)
+  );
+
   return (
-    <group dispose={null} scale={0.05}>
+    <group dispose={null} scale={0.05} ref={ref}>
       {color === ChessPieceColors.BLACK ? (
-        <group position={position}>
+        <group>
           <mesh
+            position={[0, -0.75, 0]}
             castShadow
             geometry={(nodes as any).Object_10.geometry}
             material={materials.Black_Piece}
           />
           <mesh
+            position={[0, -0.75, 0]}
             castShadow
             geometry={(nodes as any).Object_11.geometry}
             material={materials.White_Piece}
           />
         </group>
       ) : (
-        <group position={position}>
+        <group>
           <mesh
+            position={[0, -0.75, 0]}
             castShadow
             geometry={(nodes as any).Object_22.geometry}
             material={materials.White_Piece}
           />
           <mesh
+            position={[0, -0.75, 0]}
             castShadow
             geometry={(nodes as any).Object_23.geometry}
             material={materials.Black_Piece}

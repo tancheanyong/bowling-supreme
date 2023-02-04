@@ -19,6 +19,7 @@ export function ChessBoard() {
     () => ({
       args: [0.45, 0.06, 0.45],
       rotation: [0, -Math.PI / 2, 0],
+      allowSleep: true,
     }),
     useRef<Group>(null!)
   );

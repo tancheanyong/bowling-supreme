@@ -64,7 +64,7 @@ const Scene = () => {
         shadow-camera-top={0.5}
         shadow-camera-right={0.5}
       />
-      <Physics>
+      <Physics allowSleep broadphase="SAP">
         <Debug scale={1.001} color={"white"}>
           {/* <mesh castShadow position={[0, 0.2, 0]}>
             <sphereBufferGeometry args={[0.2, 16, 16]} />
