@@ -26,7 +26,7 @@ export const QueenPiece: FC<ChessPieceProps> = ({
       args: [0.07, 0.12, 0.5],
       rotation: [0, 0, 0],
       position,
-      mass: 0.1,
+      mass: 0.01,
       allowSleep: true,
       sleepSpeedLimit: 0.07,
       sleepTimeLimit: 0.01,

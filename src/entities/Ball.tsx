@@ -10,7 +10,7 @@ const Ball: FC<BallProps> = ({ position = [0, 0, 0] }) => {
   const [ballRef, api] = useSphere(
     () => ({
       position,
-      mass: 8,
+      mass: 0.5,
       args: [0.3],
       linearDamping: 0.31,
       angularDamping: 0.1,
@@ -20,7 +20,7 @@ const Ball: FC<BallProps> = ({ position = [0, 0, 0] }) => {
 
   const onBallClick = () => {
     // api.applyImpulse([0, 0, -50], [0, 0, 0]);
-    api.applyImpulse([0, 20, -100], [0, 0, 0]);
+    api.applyImpulse([0, 2, -10], [0, 0, 0]);
   };
 
   return (

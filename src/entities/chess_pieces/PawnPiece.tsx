@@ -13,7 +13,7 @@ const PawnPiece: FC<ChessPieceProps> = ({ color, position = [0, 1, 0] }) => {
       args: [0.07, 0.12, 0.37],
       rotation: [0, 0, 0],
       position,
-      mass: 0.1,
+      mass: 0.01,
       allowSleep: true,
       sleepSpeedLimit: 0.07,
       sleepTimeLimit: 0.01,

@@ -18,9 +18,10 @@ export function ChessBoard() {
 
   const [chessBoardRef] = useBox(
     () => ({
-      args: [3, 0.195, 3],
+      args: [3, 0.2, 3],
       rotation: [0, -Math.PI / 2, 0],
       position: [0, 0.1, 0],
+      mass: 0.5,
       allowSleep: true,
     }),
     useRef<Group>(null!)
