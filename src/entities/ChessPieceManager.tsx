@@ -21,8 +21,9 @@ type ChessPieceTypes = {
 export type ChessPieceProps = Omit<ChessPieceTypes, "name">;
 
 const getRandomPosition = (): [number, number, number] => {
-  const randomRange = (Math.random() - 0.5) * 3;
-  return [randomRange, 0.5, randomRange];
+  const x = (Math.random() - 0.5) * 3;
+  const z = (Math.random() - 0.5) * 3;
+  return [x, 0.5, z];
 };
 
 const CHESS_PIECES: ChessPieceTypes[] = [
@@ -39,6 +40,81 @@ const CHESS_PIECES: ChessPieceTypes[] = [
   {
     name: ChessPieceNames.PAWN,
     color: ChessPieceColors.WHITE,
+    position: getRandomPosition(),
+  },
+  {
+    name: ChessPieceNames.PAWN,
+    color: ChessPieceColors.WHITE,
+    position: getRandomPosition(),
+  },
+  {
+    name: ChessPieceNames.PAWN,
+    color: ChessPieceColors.WHITE,
+    position: getRandomPosition(),
+  },
+  {
+    name: ChessPieceNames.PAWN,
+    color: ChessPieceColors.WHITE,
+    position: getRandomPosition(),
+  },
+  {
+    name: ChessPieceNames.PAWN,
+    color: ChessPieceColors.WHITE,
+    position: getRandomPosition(),
+  },
+  {
+    name: ChessPieceNames.PAWN,
+    color: ChessPieceColors.WHITE,
+    position: getRandomPosition(),
+  },
+  {
+    name: ChessPieceNames.PAWN,
+    color: ChessPieceColors.WHITE,
+    position: getRandomPosition(),
+  },
+  {
+    name: ChessPieceNames.PAWN,
+    color: ChessPieceColors.WHITE,
+    position: getRandomPosition(),
+  },
+  {
+    name: ChessPieceNames.PAWN,
+    color: ChessPieceColors.BLACK,
+    position: getRandomPosition(),
+  },
+  {
+    name: ChessPieceNames.PAWN,
+    color: ChessPieceColors.BLACK,
+    position: getRandomPosition(),
+  },
+  {
+    name: ChessPieceNames.PAWN,
+    color: ChessPieceColors.BLACK,
+    position: getRandomPosition(),
+  },
+  {
+    name: ChessPieceNames.PAWN,
+    color: ChessPieceColors.BLACK,
+    position: getRandomPosition(),
+  },
+  {
+    name: ChessPieceNames.PAWN,
+    color: ChessPieceColors.BLACK,
+    position: getRandomPosition(),
+  },
+  {
+    name: ChessPieceNames.PAWN,
+    color: ChessPieceColors.BLACK,
+    position: getRandomPosition(),
+  },
+  {
+    name: ChessPieceNames.PAWN,
+    color: ChessPieceColors.BLACK,
+    position: getRandomPosition(),
+  },
+  {
+    name: ChessPieceNames.PAWN,
+    color: ChessPieceColors.BLACK,
     position: getRandomPosition(),
   },
 ];
