@@ -57,12 +57,9 @@ const Scene = () => {
         color={"#fadbaa"}
         ref={lightRef}
         intensity={0.7}
-        position={[3, 1.5, -2]}
+        position={[5, 3, -3]}
         castShadow
-        shadow-camera-left={-0.5}
-        shadow-camera-bottom={-0.5}
-        shadow-camera-top={0.5}
-        shadow-camera-right={0.5}
+        shadow-bias={-0.0005}
       />
       <Physics allowSleep broadphase="SAP">
         <Debug scale={1.001} color={"white"}>
@@ -74,7 +71,7 @@ const Scene = () => {
           <ChessBoard />
           <SolidPlane
             textures={TABLE_TEXTURES}
-            geometry={{ args: [2, 2], position: [0, -0.0, 0] }}
+            geometry={{ args: [10, 10], position: [0, -0.0, 0] }}
           />
           {/* <Ball position={[0, 1, 7]} /> */}
           {/* <Room />

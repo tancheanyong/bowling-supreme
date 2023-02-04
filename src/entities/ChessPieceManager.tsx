@@ -22,7 +22,7 @@ const CHESS_PIECES: ChessPieceTypes[] = [
   {
     name: ChessPieceNames.QUEEN,
     color: ChessPieceColors.BLACK,
-    position: [0.3, 0.15, 0.3],
+    position: [0.3, 1, 0.3],
   },
   { name: ChessPieceNames.QUEEN, color: ChessPieceColors.WHITE },
 ];

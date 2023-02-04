@@ -16,25 +16,25 @@ import { useFrame } from "@react-three/fiber";
 
 export const QueenPiece: FC<ChessPieceProps> = ({
   color,
-  position = [0, 0.1, 0],
+  position = [0, 1, 0],
 }) => {
   const { nodes, materials } = useGLTF("/assets/chess/scene.gltf");
 
   const [ref] = useCylinder(
     () => ({
-      args: [0.01, 0.018, 0.075],
+      args: [0.07, 0.12, 0.5],
       rotation: [0, 0, 0],
       position,
       mass: 0.1,
       allowSleep: true,
-      sleepSpeedLimit: 0.2,
+      sleepSpeedLimit: 0.07,
       sleepTimeLimit: 0.01,
     }),
     useRef<Group>(null!)
   );
 
   return (
-    <group dispose={null} scale={0.05} ref={ref}>
+    <group dispose={null} scale={0.33} ref={ref}>
       {color === ChessPieceColors.BLACK ? (
         <group>
           <mesh
