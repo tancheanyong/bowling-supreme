@@ -17,28 +17,29 @@ export function ChessBoard() {
 
   const [chessBoardRef] = useBox(
     () => ({
-      args: [0.45, 0.06, 0.45],
+      args: [3, 0.195, 3],
       rotation: [0, -Math.PI / 2, 0],
+      position: [0, 0.1, 0],
       allowSleep: true,
     }),
     useRef<Group>(null!)
   );
 
   return (
-    <group dispose={null} ref={chessBoardRef} scale={0.05}>
+    <group dispose={null} ref={chessBoardRef} scale={0.33}>
       <mesh
         receiveShadow
         castShadow
         geometry={(nodes as any).Object_4.geometry}
         material={materials.Board}
-        position={[0, 0, 0]}
+        position={[0, -0.28, 0]}
       />
       <mesh
         receiveShadow
         castShadow
         geometry={(nodes as any).Object_20.geometry}
         material={materials.Board}
-        position={[0, 0, 0]}
+        position={[0, -0.28, 0]}
       />
     </group>
   );
