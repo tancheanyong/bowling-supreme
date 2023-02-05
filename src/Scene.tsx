@@ -16,6 +16,7 @@ import {
   DirectionalLightHelper,
 } from "three";
 import ChessPieceManager from "./entities/ChessPieceManager";
+import Baseball from "./entities/Baseball";
 
 const PINS: PinProps[] = [
   {
@@ -69,11 +70,11 @@ const Scene = () => {
           </mesh> */}
           <ChessPieceManager />
           <ChessBoard />
+          <Baseball position={[0, 1, 3]} radius={0.8} />
           <SolidPlane
             textures={TABLE_TEXTURES}
             geometry={{ args: [10, 10], position: [0, -0.0, 0] }}
           />
-          <Ball position={[0, 1, 3]} />
           {/* <Room />
           {PINS.map((pin) => (
             <Pin size={pin.size} position={pin.position} mass={pin.mass} />
