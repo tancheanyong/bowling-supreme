@@ -36,6 +36,7 @@ const Baseball: FC<BaseballProps> = ({
   return (
     <group dispose={null} ref={ballRef} scale={radius}>
       <mesh
+        castShadow
         geometry={(nodes as any).polySurface5_lambert1_0.geometry}
         material={materials.lambert1}
         rotation={[0, 0, 0]}
