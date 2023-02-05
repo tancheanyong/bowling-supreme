@@ -23,7 +23,7 @@ const Baseball: FC<BaseballProps> = ({
 }) => {
   const { nodes, materials } = useGLTF("/assets/baseball/scene.gltf");
 
-  const [ballRef] = useSphere(
+  const [ballRef, api] = useSphere(
     () => ({
       args: [0.42 * radius],
       position,
@@ -33,8 +33,12 @@ const Baseball: FC<BaseballProps> = ({
     useRef<Group>(null!)
   );
 
+  const onBallClick = () => {
+    api.applyImpulse([0, 2, -10], [0, 0, 0]);
+  };
+
   return (
-    <group dispose={null} ref={ballRef} scale={radius}>
+    <group dispose={null} ref={ballRef} scale={radius} onClick={onBallClick}>
       <mesh
         castShadow
         geometry={(nodes as any).polySurface5_lambert1_0.geometry}
