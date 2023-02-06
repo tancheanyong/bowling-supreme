@@ -10,7 +10,7 @@ function App() {
         className="canvas"
         camera={{
           fov: 70,
-          position: [0, 1, 3],
+          position: [0, 1, 4],
           // rotation: [0.1, 0, 0],
         }}
       >
