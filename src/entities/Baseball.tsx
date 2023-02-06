@@ -34,7 +34,10 @@ const Baseball: FC<BaseballProps> = ({
   );
 
   const onBallClick = () => {
-    api.applyImpulse([0, 2, -10], [0, 0, 0]);
+    api.applyImpulse(
+      [(Math.random() - 0.5) * 10, Math.random() * 10, -Math.random() * 20],
+      [0, 0, 0]
+    );
   };
 
   return (
