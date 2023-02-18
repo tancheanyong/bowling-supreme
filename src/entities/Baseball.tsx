@@ -10,7 +10,8 @@ Title: Worn Baseball Ball
 import React, { FC, useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { useSphere } from "@react-three/cannon";
-import { DoubleSide, Group, Mesh } from "three";
+import { DoubleSide, Group, Mesh, Vector3 } from "three";
+import { useFrame } from "@react-three/fiber";
 
 type BaseballProps = {
   position?: [number, number, number];
@@ -35,10 +36,20 @@ const Baseball: FC<BaseballProps> = ({
 
   const onBallClick = () => {
     api.applyImpulse(
-      [(Math.random() - 0.5) * 10, Math.random() * 10, -Math.random() * 20],
+      [(Math.random() - 0.5) * 5, Math.random() * 5, -Math.random() * 20],
       [0, 0, 0]
     );
   };
+
+  let currentPos = new Vector3();
+  useFrame(() => {
+    ballRef.current?.getWorldPosition(currentPos);
+    if (currentPos.y < -30) {
+      api.velocity.set(0, 0, 0);
+      api.angularVelocity.set(0, 0, 0);
+      api.position.set(position[0], position[1], position[2]);
+    }
+  });
 
   return (
     <group dispose={null} ref={ballRef} scale={radius} onClick={onBallClick}>
